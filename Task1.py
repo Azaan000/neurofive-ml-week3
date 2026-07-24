@@ -80,3 +80,31 @@ report = classification_report(y_test, pred)
 print("Classification Report:\n", report)
 print("Best Hyperparameters:", gridsearch.best_params_)
 
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+#table for before and after hyperparameter tuning
+original_model = LogisticRegression(max_iter=1000)
+original_model.fit(X_train, y_train)
+original_pred = original_model.predict(X_test)
+
+
+original_accuracy = accuracy_score(y_test, original_pred)
+original_cm = confusion_matrix(y_test, original_pred)
+original_report = classification_report(y_test, original_pred)
+
+
+tuned_accuracy = accuracy
+tuned_cm = cm
+tuned_report = report
+
+
+print("Performance Comparison:")
+print(f"{'Metric':<20}{'Original Model':<20}{'Tuned Model':<20}")
+print(f"{'Accuracy':<20}{original_accuracy:<20.4f}{tuned_accuracy:<20.4f}")
+print(f"{'Confusion Matrix':<20}{str(original_cm):<20}{str(tuned_cm):<20}")
+print("\nOriginal Model Classification Report:\n", original_report)
+print("\nTuned Model Classification Report:\n", tuned_report)
+
+#Accuracy can be misleading for imbalanced datasets because it only measures the percentage of correct predictions. 
+#If one class is much more common than the other a model can achieve high accuracy by simply predicting the majority class every time—even if it completely fails to detect the minority class.

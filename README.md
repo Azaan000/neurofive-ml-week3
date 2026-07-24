@@ -91,30 +91,6 @@ Install the required Python libraries:
 pip install pandas numpy matplotlib seaborn scikit-learn
 ```
 
----
-
-# Project Structure
-
-```
-project/
-│
-├── Titanic/
-│   ├── data/
-│   │   ├── train.csv
-│   │   └── test.csv
-│   ├── logistic_regression.py
-│   └── README.md
-│
-├── Churn_Prediction/
-│   ├── data/
-│   │   └── churn.csv
-│   ├── churn_prediction.py
-│   └── README.md
-│
-└── requirements.txt
-```
-
----
 
 # Evaluation Metrics
 

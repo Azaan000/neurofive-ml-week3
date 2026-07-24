@@ -4,8 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
-
-
+import joblib
 df = pd.read_csv("data/churn.csv")
 
 
@@ -15,18 +14,13 @@ print(df.isnull().sum())
 
 
 df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
-
-
 df["TotalCharges"] = df["TotalCharges"].fillna(df["TotalCharges"].median())
-
 df["Churn"] = df["Churn"].map({"No": 0, "Yes": 1})
 
 df.drop("customerID", axis=1, inplace=True)
 
 
 X = pd.get_dummies(df.drop("Churn", axis=1), drop_first=True)
-
-
 y = df["Churn"]
 
 
@@ -60,6 +54,8 @@ importance = pd.DataFrame({"Feature": X.columns,"Importance": tree_model.feature
 importance = importance.sort_values(by="Importance", ascending=False)
 print(importance)
 
+joblib.dump(log_model, "logistic_model.pkl")
+joblib.dump(tree_model, "tree_model.pkl")
 
 #The churn prediction model was developed to identify customers who are likely to leave the company, allowing the business to take proactive retention measures. 
 #The model analyzes customer characteristics such as contract type, payment method, internet service, and monthly charges to predict churn. 

@@ -1,90 +1,150 @@
-## Titanic Survival Prediction using Logistic Regression with Hyperparameter Tuning TASK1
+# Machine Learning Projects
 
-This project predicts passenger survival on the Titanic dataset using Logistic Regression. The data is preprocessed by handling missing values and encoding categorical features. The model is trained and evaluated before and after hyperparameter tuning using GridSearchCV to compare performance.
+This repository contains two machine learning classification projects developed using **Python** and **Scikit-learn**:
 
-Features
-Data preprocessing
-Handles missing values
-One-Hot Encoding for categorical variables
-Logistic Regression classifier
-Hyperparameter tuning using GridSearchCV
-Model evaluation using:
-Accuracy
-Confusion Matrix
-Classification Report
-Performance comparison between the original and tuned models
-Technologies Used
-Python 3
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
-Dataset
+1. **Titanic Survival Prediction**
+2. **Customer Churn Prediction**
 
-The project uses the Kaggle Titanic dataset.
-
-## Churn Prediction Project TASK2
-
-
-This project focuses on predicting customer churn using machine learning models. It is divided into two tasks:
-
-1. Logistic Regression and Decision Tree Classifier for churn prediction.
-2. Data preprocessing and feature engineering for churn prediction.
+Both projects demonstrate the complete machine learning workflow, including data preprocessing, feature engineering, model training, evaluation, and performance improvement.
 
 ---
 
-## Logistic Regression and Decision Tree Classifier
+# Project 1: Titanic Survival Prediction
 
-### Description
-In this task, we implemented two machine learning models:
-- **Logistic Regression**: A statistical model used for binary classification.
-- **Decision Tree Classifier**: A tree-based model that splits data based on feature importance.
+## Description
+
+This project predicts whether a passenger survived the Titanic disaster using **Logistic Regression**. The dataset is preprocessed by handling missing values, encoding categorical features, and tuning the model using **GridSearchCV**.
 
 ### Steps
-1. **Data Loading**: The dataset is loaded from a CSV file.
-2. **Data Cleaning**: Missing values are handled, and categorical variables are encoded.
-3. **Model Training**:
-   - Logistic Regression is used to predict churn probabilities.
-   - Decision Tree Classifier is used to identify important features driving churn.
-4. **Evaluation**: Accuracy and feature importance are calculated.
+
+1. Load the Titanic dataset.
+2. Handle missing values.
+3. Remove unnecessary columns.
+4. Encode categorical features using One-Hot Encoding.
+5. Split the dataset into training and testing sets.
+6. Train a Logistic Regression model.
+7. Perform hyperparameter tuning using GridSearchCV.
+8. Evaluate the model using multiple metrics.
+9. Compare the original and tuned models.
 
 ### Key Outputs
-- **Accuracy**: The accuracy of both models on the test set.
-- **Feature Importance**: Top features driving churn based on the Decision Tree Classifier.
+
+- Best Hyperparameters
+- Accuracy Score
+- Confusion Matrix
+- Classification Report
+- Original vs Tuned Model Comparison
 
 ---
 
-## Data Preprocessing and Feature Engineering
+# Project 2: Customer Churn Prediction
 
-### Description
-This task focuses on preparing the dataset for machine learning models by:
-- Handling missing values.
-- Encoding categorical variables.
-- Scaling numerical features.
+## Description
 
-### Steps
-1. **Data Loading**: The dataset is loaded from `data/churn.csv`.
-2. **Data Cleaning**:
-   - The `TotalCharges` column is converted to numeric, and missing values are filled with the median.
-   - The `Churn` column is mapped to binary values (`No` → 0, `Yes` → 1).
-   - The `customerID` column is dropped as it is not useful for modeling.
-3. **Feature Engineering**:
-   - Categorical variables are one-hot encoded using `pd.get_dummies()`.
-   - Numerical features are scaled using `StandardScaler`.
-4. **Train-Test Split**: The dataset is split into training and testing sets.
+This project predicts whether a customer will leave a company using machine learning models. It includes data preprocessing, feature engineering, Logistic Regression, and Decision Tree Classification.
 
-### Key Outputs
-- **Preprocessed Dataset**: A clean and ready-to-use dataset for machine learning models.
-- **Train-Test Split**: Separate datasets for training and testing.
+### Task 1: Logistic Regression & Decision Tree
+
+#### Steps
+
+1. Load the customer churn dataset.
+2. Clean the dataset.
+3. Encode categorical variables.
+4. Train Logistic Regression and Decision Tree models.
+5. Evaluate model performance.
+
+#### Key Outputs
+
+- Model Accuracy
+- Classification Report
+- Confusion Matrix
+- Decision Tree Feature Importance
 
 ---
 
-## Requirements
+### Task 2: Data Preprocessing & Feature Engineering
 
-To run the project, you need the following Python libraries:
-- `pandas`
-- `scikit-learn`
+#### Steps
+
+1. Convert `TotalCharges` to numeric.
+2. Handle missing values.
+3. Convert the target variable (`Churn`) into binary values.
+4. Remove unnecessary columns.
+5. Apply One-Hot Encoding to categorical features.
+6. Scale numerical features using StandardScaler.
+7. Split the dataset into training and testing sets.
+
+#### Key Outputs
+
+- Cleaned Dataset
+- Encoded Features
+- Scaled Numerical Features
+- Train-Test Split
+
+---
+
+# Requirements
+
+Install the required Python libraries:
 
 ```bash
-pip install pandas scikit-learn
+pip install pandas numpy matplotlib seaborn scikit-learn
+```
+
+---
+
+# Project Structure
+
+```
+project/
+│
+├── Titanic/
+│   ├── data/
+│   │   ├── train.csv
+│   │   └── test.csv
+│   ├── logistic_regression.py
+│   └── README.md
+│
+├── Churn_Prediction/
+│   ├── data/
+│   │   └── churn.csv
+│   ├── churn_prediction.py
+│   └── README.md
+│
+└── requirements.txt
+```
+
+---
+
+# Evaluation Metrics
+
+Both projects evaluate model performance using:
+
+- Accuracy Score
+- Confusion Matrix
+- Precision
+- Recall
+- F1-Score
+
+The Titanic project additionally compares the **original Logistic Regression model** with the **hyperparameter-tuned model**, while the Churn Prediction project compares **Logistic Regression** and **Decision Tree Classifier** performance.
+
+> **Note:** Accuracy alone may not always reflect model performance, especially on imbalanced datasets. Therefore, Confusion Matrices, Precision, Recall, and F1-Scores are also used for a more comprehensive evaluation.
+
+---
+
+# Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+
+---
+
+# Author
+
+**Syed Azan Ahmed**  
+Bachelor's in Artificial Intelligence  
+Hamdard University

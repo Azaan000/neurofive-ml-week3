@@ -1,4 +1,4 @@
-##Titanic Survival Prediction using Logistic Regression with Hyperparameter Tuning TASK1
+## Titanic Survival Prediction using Logistic Regression with Hyperparameter Tuning TASK1
 
 This project predicts passenger survival on the Titanic dataset using Logistic Regression. The data is preprocessed by handling missing values and encoding categorical features. The model is trained and evaluated before and after hyperparameter tuning using GridSearchCV to compare performance.
 
